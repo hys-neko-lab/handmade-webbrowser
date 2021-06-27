@@ -1,2 +1,2 @@
 # handmade-webbrowser
-The minimal handmade web browser for sample.
+The minimal handmade web browser for example.
