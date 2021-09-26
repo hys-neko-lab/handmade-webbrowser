@@ -15,6 +15,6 @@ $(TARGET): $(OBJS)
 	$(CC) $(CFLAGS) -o $@ $^ -I $(INCLUDE)  -I /usr/local/include/freetype2 -I /usr/include/libpng16
 
 clean:
-	rm -f *.o $(TARGET) catche
+	rm -f *.o $(TARGET) cache
 
 .PHONY: all clean

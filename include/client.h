@@ -12,6 +12,6 @@
 #include <netdb.h>
 #define CLIENT_BUF_SIZE 1024
 
-int get_http(char *deststr, int port);
+int get_http(char *deststr, int port, char* path);
 
 #endif

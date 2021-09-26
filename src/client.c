@@ -1,6 +1,6 @@
 #include "client.h"
 
-int get_http(char *dest, int port)
+int get_http(char *dest, int port, char *path)
 {
 	int n;
 	int err;
@@ -54,15 +54,15 @@ int get_http(char *dest, int port)
 	/* Send HTTP request */
 	memset(buf, 0, sizeof(buf));
 	snprintf(buf, sizeof(buf),
-		"GET / HTTP/1.0\r\n\r\n");
+		"GET /%s HTTP/1.0\r\n\r\n", path);
 	n = write(sock, buf, (int)strlen(buf));
 	if (n < 0){
 		perror("write");
 		return 1;
 	}
 
-	/* Prepare catche file */
-	if ((fp = fopen("catche", "w")) == NULL){
+	/* Prepare cache file */
+	if ((fp = fopen("cache", "w")) == NULL){
 		perror("fopen");
 		return 1;
 	}
